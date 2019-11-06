@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <style>
+        body
+        {
+
+        }
+        .what
+        {
+         position: absolute;
+         top:100px;
+         left:300px;
+        }
+       #txbx
+       {
+        width:500px;
+        height:80px;
+        text-align: center;
+        font-size:30px;
+        font-weight: bold;
+       }
+       li:hover
+       {
+           text-decoration: line-through;
+       }
+    </style>
+    <head>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <title>jq2</title>
+    </head>
+    <body>
+        <div class="what">
+             <input type="text" id="txbx" placeholder="What need to be done?">
+             <ul id="list">
+              <!----  <li></li>--->
+             </ul>
+        </div>
+    </body>
+    <script>
+    $(document).ready(function(){
+        $("#txbx").keyup(function(e) {//enter key pressed
+           var a= $('#txbx').val();
+            var code = e.which;
+             if (code == 13) {//checking eneter is pressed
+             $('#list').append('<li>' + a + '</li>');//to print value from the textbox
+              $('#txbx').val("");
+              $('#txbx').focus();
+                 }
+              });
+          });
+         //  $("#list").on("mouseover", "li", function(){
+         //  $(this).wrap("<strike>");//to give strikethrough
+         //  });
+          $("#list").on("click", "li", function(){
+          $(this).remove();//remove strikethrough element
+          });
+    </script>
+</html>
