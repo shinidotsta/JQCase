@@ -1,0 +1,46 @@
+<!doctypehtml>
+<html>
+    <style>
+        body
+        {
+
+        }
+    .rectangle
+        {
+         width:300px;
+         height:300px;
+         border-block: 1px solid black;
+         background-color: brown;
+         position: absolute;
+         top:200px;
+         left:500px;
+        }
+    </style>
+    <head>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <title>Hexagon</title>
+    </head>
+    <body>
+        <div class="rectangle">
+
+        </div>
+    </body>
+    <script>
+        $(document).ready(function()
+        {
+         setInterval(function()
+         {
+          var hex=["1","2","3","4","5","6","7","8","9","A","B","C","D","E","F"];
+          var colors="#";
+          for(var i=0;i<6;i++)
+          {
+              colors+=hex[(Math.floor(Math.random()*16))];
+          }
+          $(".rectangle").css("background-color",colors);
+         },1000);
+        });
+       
+    
+    
+    </script>
+</html>
